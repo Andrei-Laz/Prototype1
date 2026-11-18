@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 100;
 
     public InputAction moveAction;
-    public Vector2 moveInput;
+    private Vector2 _moveInput;
 
     void Start()
     {
@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        moveInput = moveAction.ReadValue<Vector2>();
+        _moveInput = moveAction.ReadValue<Vector2>();
         
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * moveInput.y);
-        transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * moveInput.x);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * _moveInput.y);
+        
+        //The axis for the rotation is (0, 1, 0) because that is how you rotate a left to right
+        transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * _moveInput.x);
     }
 }
