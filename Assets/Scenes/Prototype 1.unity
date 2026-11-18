@@ -941,8 +941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee91423439a9a3eb915c2409fddaa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  speed: 0
-  turnSpeed: 0
+  speed: 25
+  turnSpeed: 200
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -993,7 +993,6 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
     m_Priority: 0
-  moveInput: {x: 0, y: 0}
 --- !u!1001 &1044930749
 PrefabInstance:
   m_ObjectHideFlags: 0
